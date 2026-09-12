@@ -104,7 +104,35 @@ export const catalog: CatalogProduct[] = [
   { sku: "PEP-038-10MG", title: "ARA-290 (Cibinetide) (10mg)", category: "Tissue Repair Research", body: "EPO helix-B peptide studied for tissue-protective innate repair receptor activity.", price: 89.99, stock: "in-stock" },
   { sku: "SUP-005-50MG", title: "5-Amino-1MQ (50mg)", category: "Mitochondrial Research", body: "NNMT inhibitor studied in adipocyte energy metabolism and NAD+ salvage pathways.", price: 109.99, stock: "in-stock" },
   { sku: "SUP-006-5MG", title: "SLU-PP-332 (5mg)", category: "Growth Hormone Research", body: "Pan-ERR agonist studied for mitochondrial biogenesis and oxidative capacity.", price: 105.99, stock: "out-of-stock" },
+  { sku: "PEP-050-322", title: "SLU-PP-322 (5mg)", category: "Mitochondrial Research", body: "ERR-family research ligand listed for oxidative-metabolism and mitochondrial models.", price: 165, stock: "in-stock" },
+  { sku: "PEP-051-1MG", title: "IGF-1 (1mg)", category: "Growth Hormone Research", body: "Insulin-like growth factor-1 research peptide for receptor and tissue-growth assays.", price: 165, stock: "in-stock" },
+  { sku: "PEP-052-75IU", title: "HMG (75 IU)", category: "Reproductive Research", body: "Human menopausal gonadotropin preparation listed for endocrine research protocols.", price: 125, stock: "in-stock" },
+  { sku: "PEP-053-5000IU", title: "HCG (5000 IU)", category: "Reproductive Research", body: "Chorionic gonadotropin research material for LH-receptor and reproductive-axis models.", price: 140, stock: "in-stock" },
+  { sku: "PEP-054-TB1", title: "TB-1", category: "Tissue Repair Research", body: "Thymosin-family research peptide studied in immune and tissue-repair models.", price: 165, stock: "in-stock" },
+  { sku: "PEP-055-GHK1200", title: "GHK-1200", category: "Skin & Cellular Research", body: "High-capacity GHK copper-peptide format for extended dermal and cellular work.", price: 90, stock: "in-stock" },
+  { sku: "PEP-056-TB4", title: "TB4 (10mg)", category: "Tissue Repair Research", body: "Thymosin beta-4 research peptide for cytoskeletal and repair-pathway assays.", price: 125, stock: "in-stock" },
 ];
+
+export function getProduct(sku: string) {
+  return catalog.find((item) => item.sku === sku);
+}
+
+export function familyKey(title: string) {
+  return title.replace(/\s*\([^)]+\)\s*$/, "").trim().toLowerCase();
+}
+
+export function relatedFormats(item: CatalogProduct) {
+  const key = familyKey(item.title);
+  const matches = catalog.filter((entry) => familyKey(entry.title) === key);
+  return matches.length > 1 ? matches : [item];
+}
+
+export const featuredSkus = [
+  "PEP-010-50MG",
+  "PEP-007-10MG",
+  "PEP-017-10MG",
+  "PEP-030-10MG",
+] as const;
 
 export const catalogStats = {
   total: catalog.length,

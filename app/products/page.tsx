@@ -14,11 +14,12 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <Eyebrow>Shop</Eyebrow>
           <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            Research Peptides
+            Research chemicals
           </h1>
           <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
-            High-purity research compounds with Australian-held stock. All
-            materials are for in-vitro laboratory research only.
+            Laboratory research chemicals with Australian-held stock. Confirm
+            identity against vial labels and any batch documentation you hold.
+            Certificates of Analysis are available on request.
           </p>
         </div>
       </section>

@@ -4,23 +4,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { nav } from "@/lib/data";
+import { useCart } from "./CartProvider";
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const { count, setOpen } = useCart();
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href="/"
           className="flex items-center gap-2.5 text-sm font-medium tracking-tight text-foreground"
           aria-label="Peptide Pharma home"
         >
           <Logo className="size-8 shrink-0" />
-          <span className="hidden sm:inline">Peptide Pharma</span>
-          <span className="sm:hidden">Peptide Pharma</span>
+          <span>Peptide Pharma</span>
         </Link>
-        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 lg:flex">
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -41,16 +42,31 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <Link
-          href="/contact"
-          className="rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
-        >
-          Partner with us
-        </Link>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="relative rounded-md border border-border bg-card px-3 py-2 text-sm font-medium hover:bg-muted"
+            aria-label={`Open cart, ${count} items`}
+          >
+            Cart
+            {count > 0 ? (
+              <span className="ml-1.5 rounded-full bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-primary-foreground">
+                {count}
+              </span>
+            ) : null}
+          </button>
+          <Link
+            href="/contact"
+            className="hidden rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 sm:inline"
+          >
+            Partner with us
+          </Link>
+        </div>
       </div>
       <nav
         aria-label="Mobile"
-        className="flex gap-4 overflow-x-auto border-t border-border px-6 py-2.5 md:hidden"
+        className="flex gap-4 overflow-x-auto border-t border-border px-6 py-2.5 lg:hidden"
       >
         {nav.map((item) => {
           const active =

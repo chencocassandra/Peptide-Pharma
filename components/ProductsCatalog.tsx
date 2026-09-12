@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { LabeledVial, splitProductTitle } from "@/components/LabeledVial";
+import { AddToCartButton } from "@/components/AddToCartButton";
 import {
   catalog,
   catalogStats,
@@ -11,6 +12,7 @@ import {
   type CatalogProduct,
   type Stock,
 } from "@/lib/catalog";
+import { money } from "@/lib/money";
 
 const stockLabel: Record<Stock, string> = {
   "in-stock": "In Stock",
@@ -20,18 +22,11 @@ const stockLabel: Record<Stock, string> = {
   partner: "Via Partner",
 };
 
-function money(n: number) {
-  return n.toLocaleString("en-AU", { style: "currency", currency: "AUD" });
-}
-
-function cta(product: CatalogProduct) {
+function notifyHref(product: CatalogProduct) {
   if (product.stock === "unavailable" || product.stock === "out-of-stock") {
-    return { href: "/contact", label: "Notify me" };
+    return "/contact";
   }
-  if (product.stock === "pre-order") {
-    return { href: "/contact", label: "Pre-Order Now" };
-  }
-  return { href: "/contact", label: "Add to enquiry" };
+  return `/products/${product.sku}`;
 }
 
 export function ProductsCatalog() {
@@ -92,13 +87,15 @@ export function ProductsCatalog() {
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => {
-          const action = cta(item);
+          const soldOut =
+            item.stock === "out-of-stock" || item.stock === "unavailable";
           return (
             <article
               key={item.sku}
               className="flex flex-col overflow-hidden rounded-xl border border-border bg-white"
             >
               <div className="relative">
+                <Link href={`/products/${item.sku}`}>
                 <LabeledVial
                   src={productImage(item)}
                   alt={`${item.title} research vial`}
@@ -107,6 +104,7 @@ export function ProductsCatalog() {
                   sku={item.sku}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 />
+                </Link>
                 <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-1.5">
                   {item.isNew ? (
                     <span className="rounded-full bg-card px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
@@ -131,7 +129,7 @@ export function ProductsCatalog() {
                   {item.category}
                 </p>
                 <h2 className="mt-2 font-display text-xl font-semibold tracking-tight">
-                  {item.title}
+                  <Link href={`/products/${item.sku}`}>{item.title}</Link>
                 </h2>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {item.body}
@@ -145,16 +143,16 @@ export function ProductsCatalog() {
                     </p>
                   ) : null}
                 </div>
-                <Link
-                  href={action.href}
-                  className={`mt-4 inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium ${
-                    item.stock === "out-of-stock" || item.stock === "unavailable"
-                      ? "border border-border"
-                      : "bg-primary text-primary-foreground hover:opacity-90"
-                  }`}
-                >
-                  {action.label}
-                </Link>
+                {soldOut ? (
+                  <Link
+                    href={notifyHref(item)}
+                    className="mt-4 inline-flex justify-center rounded-md border border-border px-3 py-2 text-sm font-medium"
+                  >
+                    Notify me
+                  </Link>
+                ) : (
+                  <AddToCartButton sku={item.sku} className="mt-4 inline-flex justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:opacity-90" />
+                )}
               </div>
             </article>
           );

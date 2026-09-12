@@ -96,6 +96,41 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <Eyebrow>Research supply</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">
+            How catalogue orders are handled
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <article className="rounded-xl border border-border bg-card p-6">
+              <h3 className="font-semibold">Documentation</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                A Certificate of Analysis reports identity and related
+                measurements for a batch. Request one by emailing the product
+                name and SKU. It is not a clinical approval or a use instruction.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-card p-6">
+              <h3 className="font-semibold">Dispatch</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Australia-wide shipping. Processing is typically 1–3 business
+                days after payment. Tracking is sent when the courier provides
+                it. Delivery dates are not guaranteed.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-card p-6">
+              <h3 className="font-semibold">Intended use</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Peptide Pharma is not a pharmacy. Product pages describe chemical
+                identity for laboratory context only. Checkout and enquiry
+                confirm research use.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <PartnerCta />
     </>
   );

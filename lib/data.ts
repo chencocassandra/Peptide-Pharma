@@ -1,8 +1,9 @@
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/science", label: "Science" },
-  { href: "/products", label: "Products" },
+  { href: "/products", label: "Catalogue" },
   { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

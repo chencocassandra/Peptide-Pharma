@@ -7,23 +7,24 @@ const columns = [
     links: [
       { href: "/science", label: "Science" },
       { href: "/science#pipeline", label: "Pipeline" },
-      { href: "/products", label: "Reagents" },
+      { href: "/products", label: "Catalogue" },
     ],
   },
   {
     title: "Institute",
     links: [
       { href: "/about", label: "About" },
-      { href: "/about#leadership", label: "Team" },
+      { href: "/faq", label: "FAQ" },
       { href: "/careers", label: "Careers" },
     ],
   },
   {
-    title: "Connect",
+    title: "Policies",
     links: [
-      { href: "/contact", label: "Contact" },
-      { href: "/collaborations", label: "Collaborations" },
-      { href: "/press", label: "Press" },
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
+      { href: "/shipping", label: "Shipping Policy" },
+      { href: "/refunds", label: "Refund Policy" },
     ],
   },
 ];
@@ -38,8 +39,8 @@ export function SiteFooter() {
             Peptide Pharma
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            An independent research organization advancing the science of peptide
-            therapeutics from sequence to translation.
+            Independent peptide research and Australia-wide laboratory supply.
+            Certificates of Analysis on request. Research use only.
           </p>
         </div>
         {columns.map((col) => (
@@ -62,7 +63,13 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto flex max-w-6xl flex-col gap-2 border-t border-border px-6 py-5 text-xs text-muted-foreground sm:flex-row sm:justify-between">
         <p>© 2026 Peptide Pharma. For research use only.</p>
-        <p>This site is for informational purposes and is not medical advice.</p>
+        <p>
+          <Link href="/contact" className="hover:text-foreground">
+            Contact
+          </Link>
+          {" · "}
+          Australia-wide dispatch
+        </p>
       </div>
     </footer>
   );

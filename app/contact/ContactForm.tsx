@@ -1,9 +1,26 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
+import { getProduct } from "@/lib/catalog";
+import { money } from "@/lib/money";
+import { useCart } from "@/components/CartProvider";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const { lines } = useCart();
+
+  const cartNote = useMemo(() => {
+    if (lines.length === 0) return "";
+    const rows = lines
+      .map((line) => {
+        const product = getProduct(line.sku);
+        if (!product) return null;
+        return `${product.title} (${product.sku}) × ${line.qty} — ${money(product.price)}`;
+      })
+      .filter(Boolean)
+      .join("\n");
+    return `Enquiry cart:\n${rows}`;
+  }, [lines]);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -13,7 +30,7 @@ export function ContactForm() {
   if (sent) {
     return (
       <p className="rounded-xl border border-border bg-muted p-6 text-sm leading-relaxed">
-        Thank you. A member of the institute will reply within two business days.
+        Thank you. A member of the team will reply within two business days.
       </p>
     );
   }
@@ -51,7 +68,7 @@ export function ContactForm() {
         <span className="font-medium">Reason for contact</span>
         <select
           name="reason"
-          defaultValue="Research collaboration"
+          defaultValue={lines.length ? "Reagent / product quote" : "Research collaboration"}
           className="mt-1.5 w-full rounded-md border border-border bg-card px-3 py-2 outline-none ring-ring focus:ring-2"
         >
           <option>Research collaboration</option>
@@ -65,7 +82,9 @@ export function ContactForm() {
         <textarea
           required
           name="message"
-          rows={5}
+          rows={lines.length ? 8 : 5}
+          defaultValue={cartNote}
+          key={cartNote || "empty"}
           placeholder="Tell us about your program or inquiry."
           className="mt-1.5 w-full rounded-md border border-border bg-card px-3 py-2 outline-none ring-ring focus:ring-2"
         />
