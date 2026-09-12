@@ -117,6 +117,12 @@ export function getProduct(sku: string) {
   return catalog.find((item) => item.sku === sku);
 }
 
+export function splitProductTitle(title: string) {
+  const match = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+  if (match) return { name: match[1], strength: match[2] };
+  return { name: title, strength: "" };
+}
+
 export function familyKey(title: string) {
   return title.replace(/\s*\([^)]+\)\s*$/, "").trim().toLowerCase();
 }

@@ -1,12 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { splitProductTitle } from "@/lib/catalog";
 
-export function splitProductTitle(title: string) {
-  const match = title.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
-  if (match) return { name: match[1], strength: match[2] };
-  return { name: title, strength: "" };
-}
+export { splitProductTitle };
 
 type LabeledVialProps = {
   src: string;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AddToCartButton } from "@/components/AddToCartButton";
-import { LabeledVial, splitProductTitle } from "@/components/LabeledVial";
-import { catalog, featuredSkus, productImage } from "@/lib/catalog";
+import { LabeledVial } from "@/components/LabeledVial";
+import { catalog, featuredSkus, productImage, splitProductTitle } from "@/lib/catalog";
 import { money } from "@/lib/money";
 
 export function FeaturedProducts() {
