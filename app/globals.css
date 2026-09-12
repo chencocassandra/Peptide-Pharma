@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fbfc;
+  --foreground: #0e1c28;
+  --primary: #165d74;
+  --primary-foreground: #f8fbfc;
+  --accent: #2f9a86;
+  --muted: #eaf3f4;
+  --muted-foreground: #5b6d77;
+  --border: #d4dee2;
+  --card: #ffffff;
+  --ring: #165d74;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 28%, white);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, black 20%, transparent 75%);
+}
