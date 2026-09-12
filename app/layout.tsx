@@ -15,12 +15,21 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://peptidepharma.com"),
   title: {
     default: "Peptide Pharma — Advancing Peptide Therapeutics",
     template: "%s | Peptide Pharma",
   },
   description:
     "Peptide Pharma is an independent research organization advancing peptide therapeutics through synthesis, structural biology, and translational science.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://peptidepharma.com",
+    siteName: "Peptide Pharma",
+  },
 };
 
 export const viewport: Viewport = {

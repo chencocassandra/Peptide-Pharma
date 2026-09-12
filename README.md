@@ -15,4 +15,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-Push to GitHub and import the repo in Vercel, or run `npx vercel`.
+Push to GitHub and import the repo in Vercel. Production domain: [peptidepharma.com](https://peptidepharma.com).

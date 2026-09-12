@@ -12,8 +12,8 @@ export default function PressPage() {
       </h1>
       <p className="mt-5 text-muted-foreground leading-relaxed">
         For interviews, background on our pipeline, or image requests, email{" "}
-        <a className="text-primary hover:underline" href="mailto:research@peptidepharma.org">
-          research@peptidepharma.org
+        <a className="text-primary hover:underline" href="mailto:research@peptidepharma.com">
+          research@peptidepharma.com
         </a>
         .
       </p>

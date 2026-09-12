@@ -22,8 +22,8 @@ export default function ContactPage() {
         <ul className="mt-4 space-y-4 text-sm">
           <li>
             <p className="text-muted-foreground">Email</p>
-            <a className="font-medium hover:underline" href="mailto:research@peptidepharma.org">
-              research@peptidepharma.org
+            <a className="font-medium hover:underline" href="mailto:research@peptidepharma.com">
+              research@peptidepharma.com
             </a>
           </li>
           <li>
