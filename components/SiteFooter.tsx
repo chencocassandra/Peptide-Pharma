@@ -39,8 +39,9 @@ export function SiteFooter() {
             Peptide Pharma
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Independent peptide research and Australia-wide laboratory supply.
-            Certificates of Analysis on request. Research use only.
+            Independent peptide research and Australia-wide laboratory supply
+            with free express shipping on every order. Certificates of Analysis
+            on request. Research use only.
           </p>
         </div>
         {columns.map((col) => (
@@ -68,7 +69,7 @@ export function SiteFooter() {
             Contact
           </Link>
           {" · "}
-          Australia-wide dispatch
+          Free express shipping Australia-wide
         </p>
       </div>
     </footer>

@@ -86,8 +86,8 @@ export default function HomePage() {
             ],
             [
               "02",
-              "Australia-wide dispatch",
-              "Orders are typically processed within 1–3 business days after payment is confirmed.",
+              "Free express, Australia-wide",
+              "Every order includes free express shipping, with no minimum spend. Same- or next-day courier is available in Melbourne for $20 within 40km of the CBD.",
             ],
             [
               "03",

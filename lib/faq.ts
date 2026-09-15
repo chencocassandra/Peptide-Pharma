@@ -8,8 +8,12 @@ export const faqs = [
     a: "Batch Certificates of Analysis are available on request. Email research@peptidepharma.com with the product name and SKU from the product page. Lot numbers are confirmed with dispatch documentation where applicable.",
   },
   {
+    q: "Do you offer free shipping?",
+    a: "Yes. Free express shipping applies to all orders, Australia-wide, with no minimum spend. Same- or next-day courier is an extra $20 for addresses within 40km of Melbourne CBD, subject to cutoff; otherwise the order ships on free express post. See the Shipping Policy for full details.",
+  },
+  {
     q: "How quickly are orders processed?",
-    a: "Research-supply orders are typically processed within 1–3 business days after payment is confirmed. Peak periods, public holidays, and back-ordered SKUs can take longer. Dispatch is Australia-wide; delivery dates are estimates, not guarantees.",
+    a: "Research-supply orders are typically processed within 1–3 business days after payment is confirmed. Every order then ships Australia-wide on free express post, with no minimum spend. Same- or next-day courier is available for $20 within 40km of Melbourne CBD, subject to cutoff; outside that radius, parcels go via free express post. Peak periods, public holidays, and back-ordered SKUs can take longer. Delivery dates are estimates, not guarantees.",
   },
   {
     q: "How can I contact Peptide Pharma?",

@@ -1,22 +1,38 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { LogoMark, type LogoId, logoIds } from "./LogoMarks";
+
+const STORAGE_KEY = "peptide-pharma-logo";
+
+function isLogoId(value: string | null): value is LogoId {
+  return !!value && (logoIds as readonly string[]).includes(value);
+}
+
+export function readLogoId(): LogoId {
+  if (typeof window === "undefined") return "current";
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  return isLogoId(stored) ? stored : "current";
+}
+
+export function writeLogoId(id: LogoId) {
+  window.localStorage.setItem(STORAGE_KEY, id);
+  window.dispatchEvent(new Event("peptide-logo-change"));
+}
+
 export function Logo({ className = "size-8" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      className={className}
-      aria-hidden="true"
-      fill="none"
-    >
-      <circle cx="16" cy="16" r="15" stroke="#2f9a86" strokeWidth="1.4" />
-      <circle cx="16" cy="16" r="6.2" stroke="#165d74" strokeWidth="1.4" />
-      <circle cx="16" cy="6.5" r="1.6" fill="#165d74" />
-      <circle cx="24.5" cy="20.8" r="1.6" fill="#2f9a86" />
-      <circle cx="7.5" cy="20.8" r="1.6" fill="#165d74" />
-      <path
-        d="M16 7.8v2.6M22.8 20.2l-2.2-1.3M9.2 20.2l2.2-1.3"
-        stroke="#165d74"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
+  const [id, setId] = useState<LogoId>("current");
+
+  useEffect(() => {
+    setId(readLogoId());
+    const sync = () => setId(readLogoId());
+    window.addEventListener("peptide-logo-change", sync);
+    window.addEventListener("storage", sync);
+    return () => {
+      window.removeEventListener("peptide-logo-change", sync);
+      window.removeEventListener("storage", sync);
+    };
+  }, []);
+
+  return <LogoMark id={id} className={className} />;
 }

@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { CartDrawer } from "@/components/CartDrawer";
 import { CartProvider } from "@/components/CartProvider";
 import { ResearchBanner } from "@/components/ResearchBanner";
+import { ShippingBanner } from "@/components/ShippingBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
+          <ShippingBanner />
           <ResearchBanner />
           <SiteHeader />
           <main id="main" className="flex-1">

@@ -29,7 +29,7 @@ export default function ContactPage() {
           </li>
           <li>
             <p className="text-muted-foreground">Dispatch</p>
-            <p className="font-medium">Australia-wide</p>
+            <p className="font-medium">Free express, Australia-wide</p>
           </li>
           <li>
             <p className="text-muted-foreground">Hours</p>
@@ -42,8 +42,10 @@ export default function ContactPage() {
         </ul>
         <h3 className="mt-8 font-semibold">Orders</h3>
         <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-          Typical processing is 1–3 business days after payment confirmation.
-          Quote requests are usually answered within two business days.
+          Typical processing is 1–3 business days after payment confirmation,
+          then free express post Australia-wide. Melbourne same- or next-day
+          courier is available for $20 within 40km of the CBD. Quote requests
+          are usually answered within two business days.
         </p>
       </div>
       <ContactForm />
