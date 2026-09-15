@@ -114,9 +114,10 @@ export default function AboutPage() {
             <article className="rounded-xl border border-border bg-card p-6">
               <h3 className="font-semibold">Dispatch</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Australia-wide shipping. Processing is typically 1–3 business
-                days after payment. Tracking is sent when the courier provides
-                it. Delivery dates are not guaranteed.
+                Free express shipping on all Australia-wide orders, with no
+                minimum spend. Same- or next-day Melbourne courier is $20 extra
+                within 40km of the CBD; otherwise parcels go via free express
+                post. Tracking is sent when the carrier provides it.
               </p>
             </article>
             <article className="rounded-xl border border-border bg-card p-6">

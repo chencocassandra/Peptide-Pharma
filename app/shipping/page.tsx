@@ -1,25 +1,48 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
+import { shippingCutoffPlaceholder } from "@/lib/shipping";
 
 export const metadata: Metadata = { title: "Shipping Policy" };
 
 export default function ShippingPage() {
   return (
     <LegalPage title="Shipping Policy" updated="September 2026">
+      <section id="express">
+        <h2>Free express shipping</h2>
+        <p>
+          Free express shipping applies to all orders, Australia-wide, with no
+          minimum spend.
+        </p>
+      </section>
+      <section id="melbourne-courier">
+        <h2>Melbourne same-day or next-day courier</h2>
+        <p>
+          Same-day or next-day courier delivery is available for an additional
+          $20, for addresses within a 40km radius of Melbourne CBD.
+        </p>
+        <p>
+          Availability depends on order time and day. Cutoff times apply:{" "}
+          {shippingCutoffPlaceholder}.
+        </p>
+        <p>
+          Courier delivery outside this radius is not available; those orders
+          ship via free express post instead.
+        </p>
+      </section>
       <section>
         <h2>Processing</h2>
         <p>
           Confirmed research-supply orders are typically packed within 1–3
-          business days. Public holidays, high volume, and items waiting on
-          documentation can extend that window.
+          business days unless a qualifying Melbourne courier slot is selected.
+          Public holidays, high volume, and items waiting on documentation can
+          extend that window.
         </p>
       </section>
       <section>
-        <h2>Dispatch</h2>
+        <h2>Tracking and delivery estimates</h2>
         <p>
-          This catalogue currently ships Australia-wide. We do not offer live
-          carrier choice at checkout. Tracking is sent when the courier provides
-          it. Any date quoted is an estimate, not a guarantee.
+          Tracking is sent when the carrier provides it. Any date quoted is an
+          estimate, not a guarantee.
         </p>
       </section>
       <section>

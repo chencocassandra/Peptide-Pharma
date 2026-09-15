@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
+import { shippingCutoffPlaceholder } from "@/lib/shipping";
 
 export const metadata: Metadata = { title: "Terms of Service" };
 
@@ -20,6 +21,27 @@ export default function TermsPage() {
           a medicine, food, or cosmetic, and nothing is supplied for human or
           veterinary use, diagnosis, or treatment. Buyers confirm they are
           qualified to handle the material in a research setting.
+        </p>
+      </section>
+      <section>
+        <h2>Shipping</h2>
+        <p>
+          Free express shipping applies to all orders, Australia-wide, with no
+          minimum spend.
+        </p>
+        <p>
+          Same-day or next-day courier delivery is available for an additional
+          $20, for addresses within a 40km radius of Melbourne CBD. Availability
+          depends on order time and day. Cutoff times apply:{" "}
+          {shippingCutoffPlaceholder}. Courier delivery outside this radius is
+          not available; those orders ship via free express post instead.
+        </p>
+        <p>
+          Full shipping rules, tracking, and address terms are on the{" "}
+          <a href="/shipping" className="font-medium text-primary underline">
+            Shipping Policy
+          </a>
+          .
         </p>
       </section>
       <section>

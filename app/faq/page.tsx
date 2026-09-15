@@ -15,7 +15,8 @@ export default function FaqPage() {
         Frequently asked questions
       </h1>
       <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-        Research-use listings, documentation, and Australia-wide dispatch.
+        Research-use listings, documentation, and free express shipping
+        Australia-wide.
       </p>
       <div className="mt-10">
         <FaqList />
