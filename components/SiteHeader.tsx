@@ -42,27 +42,19 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="relative rounded-md border border-border bg-card px-3 py-2 text-sm font-medium hover:bg-muted"
-            aria-label={`Open cart, ${count} items`}
-          >
-            Cart
-            {count > 0 ? (
-              <span className="ml-1.5 rounded-full bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-primary-foreground">
-                {count}
-              </span>
-            ) : null}
-          </button>
-          <Link
-            href="/contact"
-            className="hidden rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 sm:inline"
-          >
-            Partner with us
-          </Link>
-        </div>
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="relative rounded-md border border-border bg-card px-3 py-2 text-sm font-medium hover:bg-muted"
+          aria-label={`Open cart, ${count} items`}
+        >
+          Cart
+          {count > 0 ? (
+            <span className="ml-1.5 rounded-full bg-primary px-1.5 py-0.5 text-[10px] font-semibold text-primary-foreground">
+              {count}
+            </span>
+          ) : null}
+        </button>
       </div>
       <nav
         aria-label="Mobile"
