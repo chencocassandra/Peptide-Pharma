@@ -3,7 +3,6 @@ import { Eyebrow } from "@/components/Eyebrow";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { LabeledVial } from "@/components/LabeledVial";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { PartnerCta } from "@/components/PartnerCta";
 import { PipelineTable } from "@/components/PipelineTable";
 import { disciplines, process } from "@/lib/data";
 
@@ -222,8 +221,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <PartnerCta />
     </>
   );
 }

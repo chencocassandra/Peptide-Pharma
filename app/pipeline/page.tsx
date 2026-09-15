@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/Eyebrow";
-import { PartnerCta } from "@/components/PartnerCta";
 import { PipelineTable } from "@/components/PipelineTable";
 
 export const metadata: Metadata = { title: "Pipeline" };
@@ -22,7 +21,6 @@ export default function PipelinePage() {
           <PipelineTable />
         </div>
       </section>
-      <PartnerCta />
     </>
   );
 }

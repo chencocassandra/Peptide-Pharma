@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/Eyebrow";
-import { PartnerCta } from "@/components/PartnerCta";
 import { ProductsCatalog } from "@/components/ProductsCatalog";
 
 export const metadata: Metadata = {
@@ -32,8 +31,6 @@ export default function ProductsPage() {
           enquire.
         </p>
       </section>
-
-      <PartnerCta />
     </>
   );
 }
