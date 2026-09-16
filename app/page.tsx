@@ -15,13 +15,13 @@ export default function HomePage() {
           <div>
             <Eyebrow>Independent peptide research</Eyebrow>
             <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.05]">
-              The science of peptides, from sequence to therapy
+              Research peptides for laboratory use. Shipped within Australia.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Peptide Pharma designs next-generation peptide therapeutics and
-              supplies laboratory research compounds from Australian-held stock.
-              Certificates of Analysis are available on request. Nothing in this
-              catalogue is offered for human or veterinary use.
+              Peptide Pharma supplies laboratory research peptides from
+              Australian-held stock. Certificates of Analysis are available on
+              request. Nothing in this catalogue is offered for human or
+              veterinary use.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
