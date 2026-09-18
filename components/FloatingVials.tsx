@@ -51,7 +51,7 @@ export function FloatingVials() {
   return (
     <div
       ref={rootRef}
-      className="relative mx-auto min-h-[22rem] w-full max-w-[520px] aspect-square lg:max-w-none"
+      className="relative mx-auto h-[17.5rem] w-full max-w-[28rem] sm:h-[19rem] lg:h-[22rem] lg:max-w-none"
     >
       {heroVials.map((vial, index) => {
         const product = getProduct(vial.sku);

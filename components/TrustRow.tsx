@@ -45,7 +45,7 @@ export function TrustRow() {
     <section className="border-y border-border bg-card">
       <div className="mx-auto grid max-w-6xl gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
         {trustPoints.map((item) => (
-          <article key={item.title} className="flex gap-3 bg-card px-6 py-6">
+          <article key={item.title} className="flex gap-3 bg-card px-5 py-4 sm:px-6 sm:py-5">
             <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full bg-muted">
               <Icon name={item.icon} />
             </span>

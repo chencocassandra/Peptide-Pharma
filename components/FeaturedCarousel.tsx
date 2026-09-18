@@ -21,13 +21,13 @@ export function FeaturedCarousel() {
 
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+      <div className="mx-auto max-w-6xl px-6 py-8 sm:py-10 lg:py-12">
+        <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
               Frequently ordered
             </p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">
               Bench staples from current stock
             </h2>
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">
@@ -58,7 +58,7 @@ export function FeaturedCarousel() {
         </div>
         <div
           ref={scroller}
-          className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:thin]"
+          className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:thin]"
         >
           {items.map((item) => {
             const split = splitProductTitle(item.title);

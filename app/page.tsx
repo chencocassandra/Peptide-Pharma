@@ -11,19 +11,19 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 grid-fade opacity-60" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 lg:grid-cols-2 lg:py-20">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-6 py-8 sm:py-10 lg:grid-cols-2 lg:gap-8 lg:py-12">
           <div>
             <Eyebrow>Independent peptide research</Eyebrow>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.05]">
+            <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.05]">
               Research-Grade
               <br />
               Peptides &amp; Compounds
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
+            <p className="mt-3 max-w-lg text-base leading-relaxed text-muted-foreground">
               Independent, research-first platform delivering documented,
               batch-level analytical results for scientific use.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3">
               <Link
                 href="/products"
                 className="rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
@@ -47,14 +47,14 @@ export default function HomePage() {
       <FeaturedCarousel />
 
       <section className="border-t border-border bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mx-auto max-w-6xl px-6 py-8 sm:py-10">
           <h2 className="font-display text-2xl font-semibold tracking-tight">
             Catalogue updates
           </h2>
           <p className="mt-2 max-w-xl text-sm text-muted-foreground">
             Availability notices for research-use listings only.
           </p>
-          <div className="mt-6">
+          <div className="mt-4">
             <NewsletterForm />
           </div>
         </div>
