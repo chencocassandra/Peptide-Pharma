@@ -49,3 +49,25 @@ body {
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, black 20%, transparent 75%);
 }
+
+@keyframes vial-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--vial-travel, -10px));
+  }
+}
+
+.vial-float {
+  animation-name: vial-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vial-float {
+    animation: none;
+  }
+}

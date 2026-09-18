@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/Eyebrow";
-import { PartnerCta } from "@/components/PartnerCta";
 import { ProductsCatalog } from "@/components/ProductsCatalog";
 
 export const metadata: Metadata = {
   title: "Products & Reagents",
 };
 
-export default function ProductsPage() {
+type Props = {
+  searchParams: Promise<{ category?: string | string[] }>;
+};
+
+export default async function ProductsPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const raw = params.category;
+  const initialCategory = Array.isArray(raw) ? raw[0] : raw;
+
   return (
     <>
       <section className="border-b border-border">
@@ -25,15 +32,13 @@ export default function ProductsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <ProductsCatalog />
+        <ProductsCatalog initialCategory={initialCategory} />
         <p className="mt-10 max-w-3xl text-sm text-muted-foreground">
           Research use only. Not for human or veterinary consumption, diagnostic,
           or therapeutic use. You must be a qualified researcher aged 18+ to
           enquire.
         </p>
       </section>
-
-      <PartnerCta />
     </>
   );
 }

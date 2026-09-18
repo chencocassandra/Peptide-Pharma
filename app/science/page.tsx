@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/Eyebrow";
 import { LabeledVial } from "@/components/LabeledVial";
-import { PartnerCta } from "@/components/PartnerCta";
 import { PipelineTable } from "@/components/PipelineTable";
 import { disciplines, platforms } from "@/lib/data";
 
@@ -102,8 +101,6 @@ export default function SciencePage() {
           </div>
         </div>
       </section>
-
-      <PartnerCta />
     </>
   );
 }

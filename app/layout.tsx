@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { CartDrawer } from "@/components/CartDrawer";
 import { CartProvider } from "@/components/CartProvider";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { ResearchBanner } from "@/components/ResearchBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
+          <AnnouncementBanner />
           <ResearchBanner />
           <SiteHeader />
           <main id="main" className="flex-1">

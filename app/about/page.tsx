@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Eyebrow } from "@/components/Eyebrow";
-import { PartnerCta } from "@/components/PartnerCta";
 import { leaders, values } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -130,8 +129,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <PartnerCta />
     </>
   );
 }

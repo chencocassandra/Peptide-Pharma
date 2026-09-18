@@ -17,9 +17,11 @@ export default function ShippingPage() {
       <section>
         <h2>Dispatch</h2>
         <p>
-          This catalogue currently ships Australia-wide. We do not offer live
-          carrier choice at checkout. Tracking is sent when the courier provides
-          it. Any date quoted is an estimate, not a guarantee.
+          This catalogue currently ships Australia-wide. Confirmed research
+          orders include complimentary express dispatch within Australia, with
+          no spend minimum. We do not offer live carrier choice at checkout.
+          Tracking is sent when the courier provides it. Any date quoted is an
+          estimate, not a guarantee.
         </p>
       </section>
       <section>
