@@ -53,10 +53,20 @@ body {
 @keyframes vial-float {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(var(--vial-travel, -10px));
+    transform: translate3d(0, var(--vial-travel, -10px), 0);
+  }
+}
+
+@keyframes vial-cluster-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(18px, 0, 0);
   }
 }
 
@@ -66,8 +76,13 @@ body {
   animation-iteration-count: infinite;
 }
 
+.hero-vial-drift {
+  animation: vial-cluster-drift 24s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .vial-float {
+  .vial-float,
+  .hero-vial-drift {
     animation: none;
   }
 }
