@@ -13,7 +13,21 @@ export const categories = [
 ] as const;
 
 export type Category = (typeof categories)[number];
+export type ShopCategory = Exclude<Category, "All Products">;
 export type Stock = "in-stock" | "out-of-stock" | "pre-order" | "unavailable" | "partner";
+
+export const shopCategories = categories.filter(
+  (item): item is ShopCategory => item !== "All Products",
+);
+
+export function isCategory(value: string | null | undefined): value is Category {
+  return Boolean(value && (categories as readonly string[]).includes(value));
+}
+
+export function categoryHref(category: ShopCategory | "All Products") {
+  if (category === "All Products") return "/products";
+  return `/products?category=${encodeURIComponent(category)}`;
+}
 
 export type CatalogProduct = {
   sku: string;
@@ -134,10 +148,14 @@ export function relatedFormats(item: CatalogProduct) {
 }
 
 export const featuredSkus = [
-  "PEP-010-50MG",
   "PEP-007-10MG",
+  "PEP-010-50MG",
+  "PEP-011-10MG",
   "PEP-017-10MG",
   "PEP-030-10MG",
+  "PEP-021-20MG",
+  "PEP-015-10MG",
+  "PEP-009-10MG",
 ] as const;
 
 export const catalogStats = {

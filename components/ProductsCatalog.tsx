@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { LabeledVial, splitProductTitle } from "@/components/LabeledVial";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import {
   catalog,
   catalogStats,
   categories,
+  categoryHref,
+  isCategory,
   productImage,
   type CatalogProduct,
   type Stock,
@@ -29,9 +32,21 @@ function notifyHref(product: CatalogProduct) {
   return `/products/${product.sku}`;
 }
 
-export function ProductsCatalog() {
+export function ProductsCatalog({ initialCategory }: { initialCategory?: string }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<(typeof categories)[number]>("All Products");
+  const [category, setCategory] = useState<(typeof categories)[number]>(
+    isCategory(initialCategory) ? initialCategory : "All Products",
+  );
+
+  useEffect(() => {
+    setCategory(isCategory(initialCategory) ? initialCategory : "All Products");
+  }, [initialCategory]);
+
+  function selectCategory(next: (typeof categories)[number]) {
+    setCategory(next);
+    router.replace(categoryHref(next), { scroll: false });
+  }
 
   const items = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -71,7 +86,7 @@ export function ProductsCatalog() {
           <button
             key={item}
             type="button"
-            onClick={() => setCategory(item)}
+            onClick={() => selectCategory(item)}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium ${
               category === item
                 ? "border-primary bg-primary text-primary-foreground"

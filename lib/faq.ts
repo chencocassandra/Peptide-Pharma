@@ -9,7 +9,7 @@ export const faqs = [
   },
   {
     q: "How quickly are orders processed?",
-    a: "Research-supply orders are typically processed within 1–3 business days after payment is confirmed. Peak periods, public holidays, and back-ordered SKUs can take longer. Dispatch is Australia-wide; delivery dates are estimates, not guarantees.",
+    a: "Research-supply orders are typically packed within 1–3 business days after payment is confirmed. Confirmed orders currently include complimentary express dispatch Australia-wide with no spend minimum. Peak periods, public holidays, and back-ordered SKUs can take longer. Delivery dates are estimates, not guarantees.",
   },
   {
     q: "How can I contact Peptide Pharma?",
