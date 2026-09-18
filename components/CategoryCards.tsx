@@ -5,14 +5,14 @@ import { LabeledVial } from "./LabeledVial";
 
 export function CategoryCards() {
   return (
-    <section className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+    <section>
+      <div className="mx-auto max-w-6xl px-6 py-8 sm:py-10 lg:py-12">
+        <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
               Shop by research area
             </p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight">
               Open a bench category
             </h2>
           </div>
@@ -20,7 +20,7 @@ export function CategoryCards() {
             All listings
           </Link>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categoryCards.map((card) => {
             const product = catalog.find((item) => item.sku === card.sku);
             const split = splitProductTitle(product?.title ?? card.name);
