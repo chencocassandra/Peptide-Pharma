@@ -73,7 +73,7 @@ export function SiteHeader() {
                     {item.label}
                   </Link>
                   {shopOpen ? (
-                    <div className="absolute left-0 top-full z-50 w-[min(36rem,calc(100vw-3rem))] rounded-xl border border-border bg-card p-5 shadow-lg">
+                    <div className="absolute left-0 top-full z-50 mt-1 w-[min(36rem,calc(100vw-3rem))] overflow-visible rounded-xl border border-border bg-card p-5 pt-4 shadow-lg">
                       <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
                         Research categories
                       </p>
