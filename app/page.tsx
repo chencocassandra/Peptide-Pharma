@@ -11,7 +11,7 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 grid-fade opacity-60" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-6 py-8 sm:py-10 lg:grid-cols-2 lg:gap-8 lg:py-12">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-6 py-8 sm:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-6 lg:py-12">
           <div>
             <Eyebrow>Independent peptide research</Eyebrow>
             <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.05]">
