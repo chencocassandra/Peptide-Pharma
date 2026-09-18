@@ -1,86 +1,68 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import { getProduct, productImage, splitProductTitle } from "@/lib/catalog";
 import { heroVials } from "@/lib/home";
 import { LabeledVial } from "./LabeledVial";
 
-const vialLayout = [
-  "left-[12%] top-[4%] z-20 w-[62%] sm:w-[56%]",
-  "-left-1 bottom-[2%] z-30 w-[44%] sm:w-[40%]",
-  "right-[-2%] top-[14%] z-10 w-[42%] sm:w-[38%]",
-  "right-[6%] bottom-[-4%] z-20 w-[36%] sm:w-[32%]",
+const fan = [
+  {
+    width: "hidden w-[18%] sm:block",
+    z: "z-10",
+    offset: "translate-y-4",
+  },
+  {
+    width: "w-[32%] sm:w-[24%]",
+    z: "z-20",
+    offset: "translate-y-2",
+  },
+  {
+    width: "w-[40%] sm:w-[32%]",
+    z: "z-30",
+    offset: "translate-y-0",
+  },
+  {
+    width: "w-[32%] sm:w-[24%]",
+    z: "z-20",
+    offset: "translate-y-2",
+  },
+  {
+    width: "hidden w-[18%] sm:block",
+    z: "z-10",
+    offset: "translate-y-4",
+  },
 ] as const;
 
 export function FloatingVials() {
-  const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
-
-    const layers = Array.from(root.querySelectorAll<HTMLElement>("[data-parallax]"));
-    let frame = 0;
-
-    function update() {
-      const y = window.scrollY;
-      for (const layer of layers) {
-        const speed = Number(layer.dataset.speed ?? 0);
-        layer.style.transform = `translate3d(0, ${y * speed}px, 0)`;
-      }
-    }
-
-    function onScroll() {
-      if (frame) return;
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        update();
-      });
-    }
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
   return (
-    <div
-      ref={rootRef}
-      className="relative mx-auto h-[17.5rem] w-full max-w-[28rem] sm:h-[19rem] lg:h-[22rem] lg:max-w-none"
-    >
+    <div className="hero-vial-drift mx-auto flex w-full max-w-[36rem] items-end justify-center px-2 lg:max-w-none">
       {heroVials.map((vial, index) => {
         const product = getProduct(vial.sku);
         if (!product) return null;
         const split = splitProductTitle(product.title);
+        const slot = fan[index];
+
         return (
           <div
             key={vial.sku}
-            data-parallax
-            data-speed={vial.speed}
-            className={`absolute ${vialLayout[index]} will-change-transform`}
+            className={`relative -mx-1.5 sm:-mx-3 ${slot.width} ${slot.z}`}
           >
-            <div
-              className="vial-float overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm"
-              style={{
-                animationDuration: vial.duration,
-                animationDelay: vial.delay,
-                ["--vial-travel" as string]: vial.travel,
-              }}
-            >
-              <LabeledVial
-                src={productImage(product)}
-                alt={`${split.name} ${split.strength} research vial`}
-                name={split.name}
-                strength={split.strength}
-                sku={product.sku}
-                sizes="(min-width: 1024px) 28vw, 60vw"
-                compact
-              />
+            <div className={slot.offset}>
+              <div
+                className="vial-float overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm"
+                style={{
+                  animationDuration: vial.duration,
+                  animationDelay: vial.delay,
+                  ["--vial-travel" as string]: vial.travel,
+                }}
+              >
+                <LabeledVial
+                  src={productImage(product)}
+                  alt={`${split.name} ${split.strength} research vial`}
+                  name={split.name}
+                  strength={split.strength}
+                  sku={product.sku}
+                  sizes="(min-width: 1024px) 14vw, 28vw"
+                  compact
+                />
+              </div>
             </div>
           </div>
         );
