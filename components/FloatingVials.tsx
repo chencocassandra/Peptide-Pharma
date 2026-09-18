@@ -5,6 +5,13 @@ import { getProduct, productImage, splitProductTitle } from "@/lib/catalog";
 import { heroVials } from "@/lib/home";
 import { LabeledVial } from "./LabeledVial";
 
+const vialLayout = [
+  "left-[12%] top-[4%] z-20 w-[62%] sm:w-[56%]",
+  "-left-1 bottom-[2%] z-30 w-[44%] sm:w-[40%]",
+  "right-[-2%] top-[14%] z-10 w-[42%] sm:w-[38%]",
+  "right-[6%] bottom-[-4%] z-20 w-[36%] sm:w-[32%]",
+] as const;
+
 export function FloatingVials() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -42,8 +49,11 @@ export function FloatingVials() {
   }, []);
 
   return (
-    <div ref={rootRef} className="relative mx-auto aspect-square max-w-[520px] lg:max-w-none">
-      {heroVials.map((vial) => {
+    <div
+      ref={rootRef}
+      className="relative mx-auto min-h-[22rem] w-full max-w-[520px] aspect-square lg:max-w-none"
+    >
+      {heroVials.map((vial, index) => {
         const product = getProduct(vial.sku);
         if (!product) return null;
         const split = splitProductTitle(product.title);
@@ -52,7 +62,7 @@ export function FloatingVials() {
             key={vial.sku}
             data-parallax
             data-speed={vial.speed}
-            className={`absolute ${vial.className} will-change-transform`}
+            className={`absolute ${vialLayout[index]} will-change-transform`}
           >
             <div
               className="vial-float overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm"

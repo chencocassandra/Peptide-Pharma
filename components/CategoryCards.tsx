@@ -30,15 +30,17 @@ export function CategoryCards() {
                 href={card.href}
                 className="group overflow-hidden rounded-xl border border-border bg-card transition hover:border-accent"
               >
-                <LabeledVial
-                  src={product ? productImage(product) : "/images/vial-navy-blank.png"}
-                  alt={`${card.name} research listing`}
-                  name={split.name}
-                  strength={split.strength}
-                  sku={product?.sku}
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  compact
-                />
+                <div className="border-b border-border bg-white">
+                  <LabeledVial
+                    src={product ? productImage(product) : "/images/vial-navy-blank.png"}
+                    alt={`${card.name} research listing`}
+                    name={split.name}
+                    strength={split.strength}
+                    sku={product?.sku}
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    compact
+                  />
+                </div>
                 <div className="p-4">
                   <h3 className="font-display text-lg font-semibold tracking-tight">
                     {card.name}
