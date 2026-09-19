@@ -9,7 +9,7 @@
 }
 
 .impact {
-  --rail: 20px;
+  --rail: 60px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -51,7 +51,7 @@
 
 .how {
   position: absolute;
-  top: var(--rail);
+  top: 28px;
   right: var(--rail);
   z-index: 5;
   font-size: 24px;
@@ -68,11 +68,10 @@
 .ruo-chip {
   position: absolute;
   right: var(--rail);
-  bottom: var(--rail);
+  bottom: 28px;
   z-index: 5;
-  max-width: 640px;
-  font-size: 30px;
-  white-space: nowrap;
+  max-width: calc(100% - var(--rail) - 24px);
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.04em;
@@ -80,7 +79,7 @@
   text-align: right;
   color: var(--ink);
   background: rgba(248, 251, 252, 0.96);
-  padding: 18px 22px;
+  padding: 16px 20px;
   border-radius: 14px;
   box-shadow: 0 10px 28px rgba(14, 28, 40, 0.08);
 }
@@ -89,17 +88,17 @@
   position: relative;
   flex: 1;
   min-height: 0;
-  margin-top: 28px;
+  margin-top: 12px;
 }
 
 .impact-copy {
   position: relative;
   z-index: 2;
-  width: 50%;
+  width: 44%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 12px 24px 16px 0;
+  padding: 8px 16px 8px 0;
 }
 
 .num-wrap {
@@ -114,11 +113,11 @@
   position: absolute;
   left: -22px;
   bottom: 10px;
-  width: 340px;
-  height: 250px;
+  width: 360px;
+  height: 268px;
   border-radius: 40px;
   background: linear-gradient(145deg, var(--primary) 0%, #0f4456 100%);
-  transform: rotate(-7deg);
+  transform: rotate(-4deg);
   box-shadow: 0 32px 64px rgba(14, 28, 40, 0.2);
 }
 
@@ -136,7 +135,7 @@
 
 .step-title {
   margin-top: 10px;
-  font-size: 148px;
+  font-size: 132px;
   font-weight: 700;
   line-height: 0.84;
   letter-spacing: -0.06em;
@@ -145,23 +144,59 @@
 }
 
 .step-body {
-  margin-top: 32px;
-  max-width: 520px;
-  font-size: 40px;
+  margin-top: 28px;
+  max-width: 460px;
+  font-size: 36px;
   font-weight: 500;
   line-height: 1.22;
   color: var(--ink);
 }
 
+.protocol-index {
+  margin-top: auto;
+  padding-top: 28px;
+  list-style: none;
+}
+
+.protocol-index li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(14, 28, 40, 0.12);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--muted-fg);
+}
+
+.protocol-index li:last-child {
+  border-bottom: 1px solid rgba(14, 28, 40, 0.12);
+}
+
+.protocol-index li.on {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.protocol-index span {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  width: 48px;
+  flex-shrink: 0;
+}
+
 .bleed {
   position: absolute;
-  top: 0;
+  top: -8px;
   right: 0;
-  bottom: 0;
-  width: 58%;
+  bottom: -8px;
+  width: 72%;
   z-index: 1;
   overflow: hidden;
-  border-radius: 40px 0 0 40px;
+  border-radius: 64px 0 0 0;
   box-shadow: -28px 0 56px rgba(14, 28, 40, 0.12);
 }
 
@@ -172,9 +207,9 @@
 .prep-frame {
   position: absolute;
   left: 0;
-  right: var(--rail);
-  top: 108px;
-  bottom: 148px;
+  right: 0;
+  top: 96px;
+  bottom: 132px;
   overflow: hidden;
 }
 
@@ -184,50 +219,50 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 45% 62%;
+  object-position: 24% 60%;
+  transform: scale(1.36);
+  transform-origin: 18% 52%;
 }
 
 .reagent {
   position: absolute;
-  top: 58%;
-  width: 19%;
-  transform: translate(-50%, -50%);
-  color: #eef3f5;
+  top: 61%;
+  width: 22%;
+  color: #f4f7f8;
   font-family: Inter, system-ui, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
-  line-height: 1.15;
+  line-height: 1.12;
   pointer-events: none;
-}
-
-.reagent p {
-  white-space: nowrap;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
 .reagent p:first-child {
-  font-size: 8px;
+  font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.04em;
 }
 
 .reagent p:nth-child(2) {
-  margin-top: 4px;
-  font-size: 8px;
+  margin-top: 8px;
+  font-size: 16px;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  font-weight: 600;
 }
 
 .reagent p:nth-child(3) {
-  margin-top: 5px;
-  font-size: 7px;
+  margin-top: 8px;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.92;
+  letter-spacing: 0.06em;
+  font-weight: 700;
 }
 
-.reagent-a { left: 24%; }
-.reagent-b { left: 46%; }
-.reagent-c { left: 68%; }
+.reagent-a { left: 14%; }
+.reagent-b { left: 43%; }
+.reagent-c { left: 72%; }
 
 .impact-foot {
   position: relative;
