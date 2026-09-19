@@ -1,4 +1,8 @@
 (function () {
+  if (new URLSearchParams(location.search).has("export")) {
+    document.body.classList.add("export");
+  }
+
   const params = new URLSearchParams(location.search);
   const list = window.PP_CATALOG || [];
   const sku = params.get("sku") || (list[0] && list[0].sku);
@@ -20,30 +24,21 @@
       category: product.category,
       body: product.body,
       price: money,
-      quote: product.quote,
-      attribution: product.attribution,
-      stars: "★".repeat(product.stars || 5),
     };
     if (key in map) el.textContent = map[key];
   });
 
+  const stills = {
+    image: "../public/images/vial-navy-blank.png",
+    kit: "../public/images/vial-kit-blank.png",
+    syringes: "../public/images/supply-syringes.png",
+    structure: "../public/images/peptide-structure.png",
+  };
+
   document.querySelectorAll("[data-src]").forEach((el) => {
     if (el.hasAttribute("data-lock")) return;
     const key = el.getAttribute("data-src");
-    if (key === "image") el.src = product.image;
-  });
-
-  document.querySelectorAll("[data-thumbs]").forEach((el) => {
-    el.innerHTML = "";
-    (product.thumbs || []).slice(0, 4).forEach((url) => {
-      const fig = document.createElement("figure");
-      const img = document.createElement("img");
-    img.src = url;
-    img.alt = "";
-    img.referrerPolicy = "no-referrer";
-      fig.appendChild(img);
-      el.appendChild(fig);
-    });
+    el.src = stills[key] || stills.image;
   });
 
   const hint = document.querySelector("[data-sku-hint]");

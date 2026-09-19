@@ -5,45 +5,33 @@
     <title>Peptide Pharma · Price / promo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="shared.css" />
-    <style>
-      .bar { background: var(--primary); color: var(--primary-fg); padding: 18px 64px; text-align: center; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; }
-      .body { padding: 48px 64px 0; flex: 1; display: flex; flex-direction: column; }
-      h1 { font-size: 64px; line-height: 1.05; }
-      .sub { margin-top: 20px; font-size: 24px; color: var(--muted-fg); max-width: 860px; }
-      .thumbs { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-      .thumbs figure { height: 200px; display: flex; align-items: center; justify-content: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-      .thumbs img { width: 100%; height: 100%; object-fit: cover; }
-      .callout { margin-top: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 36px; background: var(--ink); color: var(--bg); }
-      .callout .price { font-family: "Space Grotesk", Inter, sans-serif; font-size: 40px; }
-      .cta { font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; }
-    </style>
+    <link rel="stylesheet" href="layouts.css" />
   </head>
   <body>
     <div class="page">
-      <p class="hint">Peptide Pharma · 1080×1350 · <span data-sku-hint></span></p>
-      <article class="canvas">
+      <p class="hint">Carousel 02 · Promo · 1080×1350 · <span data-sku-hint></span></p>
+      <article class="canvas canvas-split">
         <div class="inner">
-          <p class="bar">Free express within Australia · research listings only</p>
-          <div class="body">
-            <div class="logo">
-              <img src="logo.svg" width="64" height="64" alt="" />
-              <span>Peptide Pharma</span>
+          <div class="split">
+            <div class="split-copy">
+              <div class="logo">
+                <img src="logo.svg" width="96" height="96" alt="" />
+                <span>Peptide<br />Pharma</span>
+              </div>
+              <p class="eyebrow split-kicker">Now in the catalogue</p>
+              <h1 class="display" data-fill="family"></h1>
+              <p class="split-price" data-fill="price"></p>
+              <p class="split-body" data-fill="body"></p>
+              <span class="chip">Free express · AU research listings</span>
             </div>
-            <h1 class="display" style="margin-top: 36px">
-              <span data-fill="family"></span><br />now in the catalogue
-            </h1>
-            <p class="sub" data-fill="body"></p>
-            <div class="thumbs" data-thumbs></div>
-            <div class="callout">
-              <p class="price" data-fill="price"></p>
-              <p class="cta">Shop now — link in bio</p>
-            </div>
+            <figure class="split-photo">
+              <p class="chip chip-light split-url">www.peptidepharma.com</p>
+              <img data-src="kit" alt="" />
+            </figure>
           </div>
-          <footer class="footer">
-            <p class="fine">Research use only. Not for human or veterinary consumption.</p>
-          </footer>
+          <p class="legal-bar">For research use only · Not for human or veterinary consumption</p>
         </div>
       </article>
     </div>

@@ -11,13 +11,13 @@
   </head>
   <body>
     <div class="page">
-      <p class="hint">Carousel slide 1 of 4 · Prepare · preview only</p>
+      <p class="hint">Carousel 05 · Protocol 1/4 · Prepare · <span data-sku-hint></span></p>
       <article class="canvas canvas-impact">
         <div class="inner">
           <div class="impact">
             <header class="impact-top">
               <div class="logo">
-                <img src="logo.svg" width="148" height="148" alt="" />
+                <img src="logo.svg" width="96" height="96" alt="" />
                 <span>Peptide<br />Pharma</span>
               </div>
             </header>
@@ -37,9 +37,9 @@
                 </ol>
               </div>
               <figure class="bleed prep-still">
-                <p class="how">www.peptidepharma.com</p>
+                <p class="chip chip-light how">www.peptidepharma.com</p>
                 <div class="prep-frame">
-                  <img class="prep-kit" src="../public/images/vial-kit-blank.png" alt="" />
+                  <img class="prep-kit still-kit" data-src="kit" alt="" />
                   <div class="reagent reagent-a">
                     <p>Peptide<br />Pharma</p>
                     <p>Lot PP-0142-A</p>
@@ -56,7 +56,6 @@
                     <p>Research use only</p>
                   </div>
                 </div>
-                <p class="ruo-chip">For research use only<br />Not for human consumption</p>
               </figure>
             </div>
             <footer class="impact-foot">
@@ -68,15 +67,11 @@
               </div>
             </footer>
           </div>
+          <p class="legal-bar">For research use only · Not for human or veterinary consumption</p>
         </div>
       </article>
     </div>
     <script src="catalog.js"></script>
     <script src="fill.js"></script>
-    <script>
-      if (new URLSearchParams(location.search).has("export")) {
-        document.body.classList.add("export");
-      }
-    </script>
   </body>
 </html>

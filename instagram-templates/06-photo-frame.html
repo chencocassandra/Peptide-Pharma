@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Peptide Pharma · Photo frame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="layouts.css" />
+  </head>
+  <body>
+    <div class="page">
+      <p class="hint">Optional 06 · Photo frame · lab, packing, or vial stills only. Not in the SKU carousel.</p>
+      <article class="canvas canvas-split">
+        <div class="inner">
+          <div class="frame">
+            <div class="logo">
+              <img src="logo.svg" width="96" height="96" alt="" />
+              <span>Peptide<br />Pharma</span>
+            </div>
+            <div class="placeholder-photo frame-photo swap" title="SWAP: real photograph only">REAL PHOTO GOES HERE</div>
+            <div class="frame-caption">
+              <p class="eyebrow">Caption space</p>
+              <h1 class="display swap" title="SWAP: caption">Lab, packing, or vial still. No treatment claims.</h1>
+            </div>
+          </div>
+          <p class="legal-bar">For research use only · Not for human or veterinary consumption</p>
+        </div>
+      </article>
+    </div>
+    <script>
+      if (new URLSearchParams(location.search).has("export")) document.body.classList.add("export");
+    </script>
+  </body>
+</html>

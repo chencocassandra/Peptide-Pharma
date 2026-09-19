@@ -5,37 +5,33 @@
     <title>Peptide Pharma · Educational / fact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="shared.css" />
-    <style>
-      .body { padding: 48px 72px 0; flex: 1; display: flex; flex-direction: column; }
-      .hero { margin-top: 28px; height: 280px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
-      .hero img { width: 100%; height: 100%; object-fit: cover; }
-      .rule { margin: 28px 0 24px; height: 1px; background: var(--line); }
-      h1 { font-size: 52px; line-height: 1.05; }
-      .lede { margin-top: 20px; max-width: 900px; font-size: 26px; line-height: 1.45; color: var(--muted-fg); }
-      .readmore { margin-top: auto; padding: 36px 0 56px; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); }
-    </style>
+    <link rel="stylesheet" href="layouts.css" />
   </head>
   <body>
     <div class="page">
-      <p class="hint">Peptide Pharma · 1080×1350 · <span data-sku-hint></span></p>
-      <article class="canvas">
+      <p class="hint">Carousel 03 · Education · 1080×1350 · <span data-sku-hint></span></p>
+      <article class="canvas canvas-split">
         <div class="inner">
-          <div class="body">
-            <div class="logo">
-              <img src="logo.svg" width="64" height="64" alt="" />
-              <span>Peptide Pharma</span>
+          <div class="split">
+            <div class="split-copy">
+              <div class="logo">
+                <img src="logo.svg" width="96" height="96" alt="" />
+                <span>Peptide<br />Pharma</span>
+              </div>
+              <p class="eyebrow split-kicker">From the science desk</p>
+              <h1 class="display">What is <span data-fill="family"></span>?</h1>
+              <p class="split-body" data-fill="body"></p>
+              <p class="split-body">Listed as a laboratory research chemical. Not a medicine, supplement, or treatment.</p>
+              <span class="chip">Research use only</span>
             </div>
-            <p class="eyebrow" style="margin-top: 36px">From the science desk</p>
-            <div class="hero"><img data-src="image" alt="" referrerpolicy="no-referrer" /></div>
-            <div class="rule"></div>
-            <h1 class="display">What is <span data-fill="family"></span>?</h1>
-            <p class="lede" data-fill="body"></p>
-            <p class="lede">Listed as a laboratory research chemical. Not a medicine, supplement, or treatment.</p>
-            <p style="margin-top: 20px"><span class="ruo">Research use only</span></p>
-            <p class="readmore">Read more on our Science page</p>
+            <figure class="split-photo">
+              <p class="chip chip-light split-url">www.peptidepharma.com</p>
+              <img data-src="structure" alt="" />
+            </figure>
           </div>
+          <p class="legal-bar">For research use only · Not for human or veterinary consumption</p>
         </div>
       </article>
     </div>

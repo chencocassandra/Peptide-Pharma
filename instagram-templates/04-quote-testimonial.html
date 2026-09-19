@@ -2,41 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Peptide Pharma · Sample quote (fictional)</title>
+    <title>Peptide Pharma · Retired quote card</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="shared.css" />
-    <style>
-      .body { padding: 48px 72px 0; flex: 1; display: flex; flex-direction: column; }
-      .banner { background: #8a3a32; color: #fff; padding: 12px 16px; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
-      .mark { font-family: "Space Grotesk", Inter, sans-serif; font-size: 140px; line-height: 0.7; color: var(--accent); }
-      blockquote { margin-top: 8px; font-size: 36px; line-height: 1.25; font-weight: 600; letter-spacing: -0.03em; }
-      .stars { margin-top: 28px; font-size: 28px; letter-spacing: 8px; color: var(--accent); }
-      .attr { margin-top: 20px; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-fg); }
-      .sku { margin-top: 12px; font-size: 16px; color: var(--muted-fg); }
-    </style>
+    <link rel="stylesheet" href="layouts.css" />
   </head>
   <body>
     <div class="page">
-      <p class="hint">Fictional sample copy for layout only · <span data-sku-hint></span></p>
-      <article class="canvas">
+      <p class="hint">Retired · not in the product carousel. Kept so old links do not 404.</p>
+      <article class="canvas canvas-split">
         <div class="inner">
-          <p class="banner">Fictional sample — not a real customer. Do not post as a genuine review.</p>
-          <div class="body">
-            <div class="logo">
-              <img src="logo.svg" width="64" height="64" alt="" />
-              <span>Peptide Pharma</span>
+          <div class="split">
+            <div class="split-copy">
+              <div class="logo">
+                <img src="logo.svg" width="96" height="96" alt="" />
+                <span>Peptide<br />Pharma</span>
+              </div>
+              <p class="eyebrow split-kicker">Not for posting</p>
+              <h1 class="display">Quote cards are retired</h1>
+              <p class="split-body">This layout is no longer part of the Peptide Pharma carousel. Do not export or publish it as a review.</p>
+              <span class="chip">Research use only</span>
             </div>
-            <p class="mark" aria-hidden="true">“</p>
-            <blockquote class="display" data-fill="quote"></blockquote>
-            <p class="stars" data-fill="stars"></p>
-            <p class="attr" data-fill="attribution"></p>
-            <p class="sku" data-fill="title"></p>
+            <figure class="split-photo">
+              <p class="chip chip-light split-url">www.peptidepharma.com</p>
+              <img data-src="image" alt="" />
+            </figure>
           </div>
-          <footer class="footer">
-            <p class="fine">Research use only. Sample copy is about packing and paperwork, not health outcomes.</p>
-          </footer>
+          <p class="legal-bar">For research use only · Not for human or veterinary consumption</p>
         </div>
       </article>
     </div>

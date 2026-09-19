@@ -5,47 +5,38 @@
     <title>Peptide Pharma · Product spotlight</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="shared.css" />
-    <style>
-      .top { padding: 48px 64px 0; display: flex; justify-content: space-between; }
-      .photo {
-        margin: 32px 72px 0; height: 620px; display: flex; align-items: center; justify-content: center;
-        background: var(--card); border: 1px solid var(--line); border-radius: 24px; overflow: hidden;
-      }
-      .photo img { width: 100%; height: 100%; object-fit: cover; }
-      .copy { padding: 36px 64px 0; text-align: center; }
-      .copy h1 { font-size: 48px; line-height: 1.05; }
-      .price { margin-top: 10px; font-size: 32px; font-weight: 600; }
-      .benefit { margin: 16px auto 0; max-width: 840px; font-size: 22px; line-height: 1.4; color: var(--muted-fg); }
-      .badges { margin-top: 22px; }
-    </style>
+    <link rel="stylesheet" href="layouts.css" />
   </head>
   <body>
     <div class="page">
-      <p class="hint">Peptide Pharma · 1080×1350 · <span data-sku-hint></span></p>
-      <article class="canvas">
+      <p class="hint">Carousel 01 · Spotlight · 1080×1350 · <span data-sku-hint></span></p>
+      <article class="canvas canvas-split">
         <div class="inner">
-          <header class="top">
-            <div class="logo">
-              <img src="logo.svg" width="64" height="64" alt="" />
-              <span>Peptide Pharma</span>
+          <div class="split">
+            <div class="split-copy">
+              <div class="logo">
+                <img src="logo.svg" width="96" height="96" alt="" />
+                <span>Peptide<br />Pharma</span>
+              </div>
+              <p class="eyebrow split-kicker" data-fill="category"></p>
+              <h1 class="display" data-fill="title"></h1>
+              <p class="split-price" data-fill="price"></p>
+              <p class="split-body" data-fill="body"></p>
+              <span class="chip">Research use only</span>
             </div>
-          </header>
-          <div class="photo">
-            <img data-src="image" alt="" referrerpolicy="no-referrer" />
+            <figure class="split-photo">
+              <p class="chip chip-light split-url">www.peptidepharma.com</p>
+              <img data-src="image" alt="" />
+              <div class="reagent-solo">
+                <p>Peptide<br />Pharma</p>
+                <p data-fill="sku"></p>
+                <p>Research use only</p>
+              </div>
+            </figure>
           </div>
-          <div class="copy">
-            <p class="eyebrow" data-fill="category"></p>
-            <h1 class="display" data-fill="title"></h1>
-            <p class="price" data-fill="price"></p>
-            <p class="benefit" data-fill="body"></p>
-            <div class="badges"><span class="ruo">Research use only</span></div>
-          </div>
-          <footer class="footer">
-            <p class="fine">Not for human or veterinary consumption.</p>
-            <p class="fine">Shop · link in bio</p>
-          </footer>
+          <p class="legal-bar">For research use only · Not for human or veterinary consumption</p>
         </div>
       </article>
     </div>
