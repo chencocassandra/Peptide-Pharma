@@ -2,32 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Peptide Pharma · Protocol 1 of 4</title>
+    <title>Peptide Pharma · Protocol 1 of 4 · Prepare</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="shared.css" />
-    <link rel="stylesheet" href="protocol.css" />
+    <link rel="stylesheet" href="protocol-impact.css" />
   </head>
   <body>
     <div class="page">
-      <p class="hint">Carousel slide 1 of 4 · Design</p>
-      <article class="canvas">
+      <p class="hint">Carousel slide 1 of 4 · Prepare · preview only</p>
+      <article class="canvas canvas-impact">
         <div class="inner">
-          <div class="slide-body">
-            <div class="logo">
-              <img src="logo.svg" width="64" height="64" alt="" />
-              <span>Peptide Pharma</span>
+          <div class="impact">
+            <header class="impact-top">
+              <div class="logo">
+                <img src="logo.svg" width="120" height="120" alt="" />
+                <span>Peptide Pharma</span>
+              </div>
+              <p class="how">How it works</p>
+            </header>
+            <div class="impact-stage">
+              <div class="impact-copy">
+                <div class="num-wrap">
+                  <span class="num-shape" aria-hidden="true"></span>
+                  <p class="num">01</p>
+                </div>
+                <h1 class="display step-title">Prepare</h1>
+                <p class="step-body">Set a clean, well-lit bench. Confirm the vial, gloves, and prep pads before you start.</p>
+              </div>
+              <figure class="bleed">
+                <img
+                  data-src="image"
+                  alt=""
+                  referrerpolicy="no-referrer"
+                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=1400&q=80"
+                />
+              </figure>
             </div>
-            <p class="eyebrow kicker">The protocol · How it works</p>
-            <h1 class="display">A disciplined path from molecule to model</h1>
-            <p class="step-n">01</p>
-            <p class="display step-title">Design</p>
-            <p class="step-body">Rational sequence design informed by receptor structure and computational modeling.</p>
-            <p class="pager">1 / 4</p>
+            <footer class="impact-foot">
+              <div class="dots" aria-hidden="true">
+                <span class="on"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p class="pager">1/4 · Prep pads</p>
+            </footer>
           </div>
         </div>
       </article>
     </div>
+    <script src="catalog.js"></script>
+    <script src="fill.js"></script>
+    <script>
+      if (new URLSearchParams(location.search).has("export")) {
+        document.body.classList.add("export");
+      }
+    </script>
   </body>
 </html>

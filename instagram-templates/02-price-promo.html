@@ -10,38 +10,35 @@
     <style>
       .bar { background: var(--primary); color: var(--primary-fg); padding: 18px 64px; text-align: center; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; }
       .body { padding: 48px 64px 0; flex: 1; display: flex; flex-direction: column; }
-      h1 { font-size: 88px; line-height: 0.95; }
-      .sub { margin-top: 20px; font-size: 26px; color: var(--muted-fg); max-width: 860px; }
-      .thumbs { margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-      .thumbs figure { height: 210px; display: flex; align-items: center; justify-content: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px; }
-      .thumbs img { max-width: 100%; max-height: 100%; object-fit: contain; }
-      .callout { margin-top: 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 36px; background: var(--ink); color: var(--bg); }
-      .callout .price { font-family: "Space Grotesk", Inter, sans-serif; font-size: 44px; }
+      h1 { font-size: 64px; line-height: 1.05; }
+      .sub { margin-top: 20px; font-size: 24px; color: var(--muted-fg); max-width: 860px; }
+      .thumbs { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .thumbs figure { height: 200px; display: flex; align-items: center; justify-content: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+      .thumbs img { width: 100%; height: 100%; object-fit: cover; }
+      .callout { margin-top: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 32px 36px; background: var(--ink); color: var(--bg); }
+      .callout .price { font-family: "Space Grotesk", Inter, sans-serif; font-size: 40px; }
       .cta { font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; }
     </style>
   </head>
   <body>
     <div class="page">
-      <p class="hint">Peptide Pharma · 1080×1350 · screenshot the canvas only</p>
+      <p class="hint">Peptide Pharma · 1080×1350 · <span data-sku-hint></span></p>
       <article class="canvas">
         <div class="inner">
-          <p class="bar">Free express within Australia · no minimum spend</p>
+          <p class="bar">Free express within Australia · research listings only</p>
           <div class="body">
             <div class="logo">
               <img src="logo.svg" width="64" height="64" alt="" />
               <span>Peptide Pharma</span>
             </div>
-            <h1 class="display swap" title="SWAP: offer headline" style="margin-top: 40px">15% off<br />this week</h1>
-            <p class="sub swap" title="SWAP: offer details">Selected lyophilised research listings. Laboratory use only — not a medicine or supplement.</p>
-            <div class="thumbs swap" title="SWAP: 3–4 product thumbnails">
-              <figure><img src="../public/images/vial-navy-blank.png" alt="" /></figure>
-              <figure><img src="../public/images/vial-glp1.png" alt="" /></figure>
-              <figure><img src="../public/images/vial-metabolic.png" alt="" /></figure>
-              <figure><img src="../public/images/vial-standard.png" alt="" /></figure>
-            </div>
+            <h1 class="display" style="margin-top: 36px">
+              <span data-fill="family"></span><br />now in the catalogue
+            </h1>
+            <p class="sub" data-fill="body"></p>
+            <div class="thumbs" data-thumbs></div>
             <div class="callout">
-              <p class="price swap" title="SWAP: price call-out">From $79.99 AUD</p>
-              <p class="cta swap" title="SWAP: CTA">Shop now — link in bio</p>
+              <p class="price" data-fill="price"></p>
+              <p class="cta">Shop now — link in bio</p>
             </div>
           </div>
           <footer class="footer">
@@ -50,5 +47,7 @@
         </div>
       </article>
     </div>
+    <script src="catalog.js"></script>
+    <script src="fill.js"></script>
   </body>
 </html>

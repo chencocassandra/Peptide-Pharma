@@ -10,20 +10,48 @@
       body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f8fbfc; color: #0e1c28; padding: 40px; }
       h1 { font-family: "Space Grotesk", Inter, sans-serif; }
       a { color: #165d74; }
-      li { margin: 8px 0; }
+      table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 14px; }
+      th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #d7e4ea; vertical-align: top; }
+      th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5b7380; }
+      .links a { margin-right: 10px; white-space: nowrap; }
     </style>
   </head>
   <body>
     <h1>Peptide Pharma · Instagram templates</h1>
-    <p>1080×1350 portrait canvases. Open a file, screenshot the canvas, export as an image.</p>
-    <ul>
-      <li><a href="01-product-spotlight.html">Product spotlight</a></li>
-      <li><a href="02-price-promo.html">Price / promo</a></li>
-      <li><a href="03-educational.html">Educational / fact</a></li>
-      <li><a href="04-quote-testimonial.html">Quote / testimonial (template only)</a></li>
-      <li>Protocol carousel: <a href="05-protocol-01-design.html">01 Design</a> · <a href="05-protocol-02-synthesize.html">02 Synthesize</a> · <a href="05-protocol-03-characterize.html">03 Characterize</a> · <a href="05-protocol-04-translate.html">04 Translate</a></li>
-      <li><a href="06-people-lifestyle.html">People / lifestyle frame</a></li>
-    </ul>
-    <p><a href="README.md">README — what to swap vs keep</a></p>
+    <p>1080×1350 canvases. Append <code>?sku=</code> to any template to fill that catalogue listing. Photos are Unsplash laboratory stills (no people).</p>
+    <p>Quote cards are <strong>fictional samples</strong> about packing and CoA only — do not post them as real reviews.</p>
+    <p>Master layouts: <a href="01-product-spotlight.html">spotlight</a> · <a href="02-price-promo.html">promo</a> · <a href="03-educational.html">education</a> · <a href="04-quote-testimonial.html">quote</a> · protocol <a href="05-protocol-01-design.html">1</a> <a href="05-protocol-02-synthesize.html">2</a> <a href="05-protocol-03-characterize.html">3</a> <a href="05-protocol-04-translate.html">4</a></p>
+    <table>
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Product</th>
+          <th>Templates</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <script src="catalog.js"></script>
+    <script>
+      const tbody = document.getElementById("rows");
+      (window.PP_CATALOG || []).forEach((item) => {
+        const q = encodeURIComponent(item.sku);
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${item.sku}</td>
+          <td>${item.title}<br><span style="color:#5b7380">${item.category}</span></td>
+          <td class="links">
+            <a href="01-product-spotlight.html?sku=${q}">Spotlight</a>
+            <a href="02-price-promo.html?sku=${q}">Promo</a>
+            <a href="03-educational.html?sku=${q}">Education</a>
+            <a href="04-quote-testimonial.html?sku=${q}">Quote</a>
+            <a href="05-protocol-01-design.html?sku=${q}">P1</a>
+            <a href="05-protocol-02-synthesize.html?sku=${q}">P2</a>
+            <a href="05-protocol-03-characterize.html?sku=${q}">P3</a>
+            <a href="05-protocol-04-translate.html?sku=${q}">P4</a>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+    </script>
   </body>
 </html>

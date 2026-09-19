@@ -11,19 +11,19 @@
       .top { padding: 48px 64px 0; display: flex; justify-content: space-between; }
       .photo {
         margin: 32px 72px 0; height: 620px; display: flex; align-items: center; justify-content: center;
-        background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+        background: var(--card); border: 1px solid var(--line); border-radius: 24px; overflow: hidden;
       }
-      .photo img { max-width: 78%; max-height: 90%; object-fit: contain; }
+      .photo img { width: 100%; height: 100%; object-fit: cover; }
       .copy { padding: 36px 64px 0; text-align: center; }
-      .copy h1 { font-size: 52px; line-height: 1.05; }
+      .copy h1 { font-size: 48px; line-height: 1.05; }
       .price { margin-top: 10px; font-size: 32px; font-weight: 600; }
-      .benefit { margin: 16px auto 0; max-width: 840px; font-size: 24px; line-height: 1.4; color: var(--muted-fg); }
+      .benefit { margin: 16px auto 0; max-width: 840px; font-size: 22px; line-height: 1.4; color: var(--muted-fg); }
       .badges { margin-top: 22px; }
     </style>
   </head>
   <body>
     <div class="page">
-      <p class="hint">Peptide Pharma · 1080×1350 · screenshot the canvas only</p>
+      <p class="hint">Peptide Pharma · 1080×1350 · <span data-sku-hint></span></p>
       <article class="canvas">
         <div class="inner">
           <header class="top">
@@ -32,16 +32,14 @@
               <span>Peptide Pharma</span>
             </div>
           </header>
-          <div class="photo swap" title="SWAP: product image">
-            <img src="../public/images/vial-navy-blank.png" alt="Retatrutide research vial" />
+          <div class="photo">
+            <img data-src="image" alt="" referrerpolicy="no-referrer" />
           </div>
           <div class="copy">
-            <p class="eyebrow">Shop · Metabolic research</p>
-            <h1 class="display swap" title="SWAP: product name">Retatrutide (10mg)</h1>
-            <p class="price swap" title="SWAP: price">$144.99 AUD</p>
-            <p class="benefit swap" title="SWAP: one short laboratory benefit line">
-              Lyophilised research peptide. HPLC-checked batches. Certificate of Analysis on request.
-            </p>
+            <p class="eyebrow" data-fill="category"></p>
+            <h1 class="display" data-fill="title"></h1>
+            <p class="price" data-fill="price"></p>
+            <p class="benefit" data-fill="body"></p>
             <div class="badges"><span class="ruo">Research use only</span></div>
           </div>
           <footer class="footer">
@@ -51,5 +49,7 @@
         </div>
       </article>
     </div>
+    <script src="catalog.js"></script>
+    <script src="fill.js"></script>
   </body>
 </html>
