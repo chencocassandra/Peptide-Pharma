@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Peptide Pharma · Product spotlight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="shared.css" />
+    <style>
+      .top { padding: 48px 64px 0; display: flex; justify-content: space-between; }
+      .photo {
+        margin: 32px 72px 0; height: 620px; display: flex; align-items: center; justify-content: center;
+        background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+      }
+      .photo img { max-width: 78%; max-height: 90%; object-fit: contain; }
+      .copy { padding: 36px 64px 0; text-align: center; }
+      .copy h1 { font-size: 52px; line-height: 1.05; }
+      .price { margin-top: 10px; font-size: 32px; font-weight: 600; }
+      .benefit { margin: 16px auto 0; max-width: 840px; font-size: 24px; line-height: 1.4; color: var(--muted-fg); }
+      .badges { margin-top: 22px; }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <p class="hint">Peptide Pharma · 1080×1350 · screenshot the canvas only</p>
+      <article class="canvas">
+        <div class="inner">
+          <header class="top">
+            <div class="logo">
+              <img src="logo.svg" width="64" height="64" alt="" />
+              <span>Peptide Pharma</span>
+            </div>
+          </header>
+          <div class="photo swap" title="SWAP: product image">
+            <img src="../public/images/vial-navy-blank.png" alt="Retatrutide research vial" />
+          </div>
+          <div class="copy">
+            <p class="eyebrow">Shop · Metabolic research</p>
+            <h1 class="display swap" title="SWAP: product name">Retatrutide (10mg)</h1>
+            <p class="price swap" title="SWAP: price">$144.99 AUD</p>
+            <p class="benefit swap" title="SWAP: one short laboratory benefit line">
+              Lyophilised research peptide. HPLC-checked batches. Certificate of Analysis on request.
+            </p>
+            <div class="badges"><span class="ruo">Research use only</span></div>
+          </div>
+          <footer class="footer">
+            <p class="fine">Not for human or veterinary consumption.</p>
+            <p class="fine">Shop · link in bio</p>
+          </footer>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

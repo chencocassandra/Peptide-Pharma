@@ -1,0 +1,157 @@
+:root {
+  --bg: #f8fbfc;
+  --ink: #0e1c28;
+  --primary: #165d74;
+  --primary-fg: #f8fbfc;
+  --accent: #2f9a86;
+  --muted: #eaf3f4;
+  --muted-fg: #5b6d77;
+  --line: #d4dee2;
+  --card: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #d4dee2;
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 64px;
+}
+
+.hint {
+  max-width: 1080px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted-fg);
+}
+
+.canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, black 20%, transparent 75%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.swap {
+  outline: 2px dashed var(--accent);
+  outline-offset: -6px;
+}
+
+.eyebrow {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.display {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.ruo {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--primary);
+  color: var(--primary-fg);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo svg {
+  width: 64px;
+  height: 64px;
+}
+
+.logo span {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.fine {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--muted-fg);
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 64px 48px;
+}
+
+.placeholder-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border: 3px dashed var(--primary);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--muted),
+    var(--muted) 16px,
+    var(--card) 16px,
+    var(--card) 32px
+  );
+  color: var(--primary);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}

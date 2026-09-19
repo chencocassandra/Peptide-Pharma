@@ -1,0 +1,7 @@
+.slide-body { padding: 48px 72px 0; flex: 1; display: flex; flex-direction: column; }
+.kicker { margin-top: 40px; }
+h1 { margin-top: 12px; font-size: 42px; }
+.step-n { margin-top: 48px; font-size: 22px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+.step-title { margin-top: 12px; font-size: 80px; line-height: 1; }
+.step-body { margin-top: 24px; max-width: 860px; font-size: 30px; line-height: 1.4; color: var(--muted-fg); }
+.pager { margin-top: auto; padding-bottom: 56px; font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-fg); }
