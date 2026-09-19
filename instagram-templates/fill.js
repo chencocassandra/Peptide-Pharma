@@ -28,6 +28,7 @@
   });
 
   document.querySelectorAll("[data-src]").forEach((el) => {
+    if (el.hasAttribute("data-lock")) return;
     const key = el.getAttribute("data-src");
     if (key === "image") el.src = product.image;
   });
